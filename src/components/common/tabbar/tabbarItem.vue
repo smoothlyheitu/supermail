@@ -32,6 +32,10 @@
 </script>
 
 <style>
+	.tabbarItem{
+		display: flex;
+		align-items: center;
+	}
 	.isActive{
 		color: red;
 	}

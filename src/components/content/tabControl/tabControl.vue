@@ -1,6 +1,6 @@
 <template>
 	<div class="tabControl">
-		<div  v-for="(item,index) in tabControlList" :class="{tabControlItem:index==indexs}" @click="tabClick(index)">
+		<div  v-for="(item,index) in tabControlList" :class="{tabControlItem:index==currentindex}" @click="tabClick(index)">
 			{{item}}
 		</div>
 	</div>
@@ -19,13 +19,13 @@
 		},
 		data(){
 			return{
-				indexs:0
+				currentindex:0
 			}
 		},
 		methods:{
 			tabClick(index){
-				this.indexs = index;
-				console.log(index)
+				this.currentindex = index;
+				this.$emit('tabClick',index);
 			}
 		}
 	}
@@ -35,11 +35,18 @@
 	.tabControl{
 		display: flex;
 		text-align: center;
+		height: 44px;
+		line-height: 44px;
 		justify-content: space-around;
+		margin-bottom: 15px;
+		position: sticky;
+		top: 46px;
+		background-color: rgb(255,255,255);
+		z-index: 9;
 	}
 	.tabControlItem{
 		color: red;
 		padding-bottom: 10px;
-		border-bottom: 10px solid;
+		border-bottom: 2px solid;
 	}
 </style>

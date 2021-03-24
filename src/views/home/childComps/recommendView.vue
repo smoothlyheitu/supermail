@@ -3,8 +3,8 @@
 		<div v-for="item in recommendList">
 			<a :href="item.link">
 				<img :src="item.image" alt="">
-				<div>{{item.title}}</div>
 			</a>
+			<div>{{item.title}}</div>
 		</div>
 	</div>
 </template>
@@ -15,7 +15,9 @@
 		props:{
 			recommendList:{
 				type:Array,
-				default:[]
+				default(){
+					return []
+				}
 			}
 		}
 	}
@@ -24,13 +26,11 @@
 <style>
 	.recommend{
 		display: flex;
-		padding-bottom: 20px;
-		border-bottom: 10px solid;
+		padding-top: 10px;
+		border-bottom: 10px solid rgb(238,238,238);
+		text-align: center;
 	}
-	a{
-		text-decoration: none;
-	}
-	img{
-		width: 100%;
+	a img{
+		width: 85%;
 	}
 </style>

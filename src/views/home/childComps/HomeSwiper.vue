@@ -1,15 +1,18 @@
 <template>
-  <swiper ref="swiper" v-if="banners.length">
-    <swiper-item v-for="(item, index) in banners" :key="index">
-      <a :href="item.link">
-        <img :src="item.image" alt="">
-      </a>
-    </swiper-item>
-  </swiper>
+	<div id="swiper">
+		<swiper ref="swiper" v-if="banners.length">
+		  <swiper-item v-for="(item, index) in banners" :key="index">
+		    <a :href="item.link">
+		      <img :src="item.image" alt="">
+		    </a>
+		  </swiper-item>
+		</swiper>
+	</div>
+  
 </template>
 
 <script>
-  import {Swiper, SwiperItem} from 'common/swiper'
+  import {Swiper, SwiperItem} from 'components/common/swiper'
 
 	export default {
 		name: "HomeSwiper",
@@ -39,5 +42,7 @@
 </script>
 
 <style scoped>
-
+	#swiper{
+		margin-top: 44px;
+	}
 </style>
